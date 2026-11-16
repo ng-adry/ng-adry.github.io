@@ -1,0 +1,34 @@
+citeste n
+pentru i<-1,n execută
+citeste v[i]
+daca n=0 atunci
+  scrie "FARA DATE"
+  altfel
+    s <- 0
+    maxim <- lista[1]
+    alerta <- fals
+
+    pentru i<-1,n execută
+        s <- s+ v[i]
+        daca v[i] > maxim atunci
+            maxim <- v[i]
+        daca v[i] > 30 atunci
+            alerta <- adevarat
+    sfarsit pentru
+    media ← s/n
+    scrie media
+    scrie maxim
+
+    daca alerta = adevarat atunci
+        scrie "ALERTA"
+    altfel
+        scrie "FARA ALERTA"
+sfarsit daca
+
+
+v[i] | Sumă |	Maxim |	Alertă
+14	    14	    14	    fals
+18	    32	    18	    fals
+41	    73	    41	    adevărat
+12	    85	    41	    adevărat
+media= 85/4 = 21,25
