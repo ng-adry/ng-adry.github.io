@@ -1,0 +1,25 @@
+ citeste a,b,c,prag
+  min <- a
+  daca b<min atunci
+    min<-b
+  daca c<min atunci
+    min<-c
+ daca max>prag atunci
+   scrie "alerta"
+altfel
+  scrie "fara alerta"
+
+
+max      |   a | b | c | prag
+-4          -4   -9  -2    -3
+-4          -4   -9  -2    -3
+-2          -4   -9  -2    -3
+
+-2>-3 => ALERTA
+
+max      |   a | b | c | prag
+7           7     5  6    7
+7           7     5  6    7
+7           7     5  6    7
+
+7>7 => FARA ALERTA
