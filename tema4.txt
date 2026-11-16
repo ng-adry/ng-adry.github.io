@@ -1,0 +1,41 @@
+
+enqueue(A) → [A]
+enqueue(B) → [A, B]
+enqueue(C) → [A, B, C]
+Primul dequeue() elimină A. Coada devine [B, C].
+Al doilea dequeue() elimină B. Coada devine [C].
+Al treilea dequeue() elimină C. Coada devine [].
+Ordinea eliminării este A, B, C.
+
+Inițial:
+Undo = []
+Redo = []
+
+
+Pas |     Undo |   Redo | Editări active 
+Inițial    []        []         [] 
+Edit(X)    [X]       []         [X] 
+Edit(Y)    [X, Y]    []       [X, Y] 
+Undo()     [X]      [Y]         [X] 
+Edit(Z)    [X, Z]    []        [X, Z] 
+
+
+Edit(X) adaugă editarea X.
+Edit(Y) adaugă editarea Y.
+Undo() anulează ultima editare, adică Y, și o mută în Redo.
+Edit(Z) adaugă editarea Z și golește stiva Redo.
+
+Redo(Y) ar reactiva editarea Y dacă ar fi executată imediat după Undo(). Dar deoarece se execută Edit(Z), istoricul Redo se șterge.
+
+Pentru a evita executarea de două ori a operației B, fiecare operație primește un identificator stabil: A, B sau C.
+Exemplu:
+A → identificator A
+B → identificator B
+C → identificator C
+
+Dacă confirmarea operației B se pierde, aceasta poate fi trimisă din nou cu același identificator B.
+Sistemul verifică dacă operația B a fost deja executată.
+- Dacă B există deja în lista operațiilor procesate, nu se mai execută.
+- Dacă B nu există, se execută și se înregistrează.
+Verificarea și înregistrarea trebuie realizate atomic, adică împreună, ca să nu existe riscul executării de două ori.
+Astfel, operația B produce efectul o singură dată.
