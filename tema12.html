@@ -1,0 +1,95 @@
+
+<html>
+<head>
+</head>
+<body>
+
+    <h2>Formular student</h2>
+
+    <form>
+        <label for="prenume">Prenume:</label>
+        <input type="text" id="prenume" name="prenume" required>
+        <br><br>
+
+        <label for="nume">Nume:</label>
+        <input type="text" id="nume" name="nume" required>
+        <br><br>
+
+        <label for="an">An de studiu:</label>
+        <input type="number" id="an" name="an" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <input type="submit" value="Trimite">
+    </form>
+
+    <h2>Discipline si credite</h2>
+
+    <table border="1">
+        <tr>
+            <th>Disciplina</th>
+            <th>Credite</th>
+        </tr>
+        <tr>
+            <td>Informatica</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Matematica</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Programare</td>
+            <td>6</td>
+        </tr>
+    </table>
+
+    <h2>3. Trei defecte intr-un formular</h2>
+
+    <p><b>Defectul 1:</b> Atributul for al etichetei
+    nu corespunde cu atributul id al campului.
+    Eticheta nu este asociata corect cu acel camp.</p>
+
+    <p><b>Defectul 2:</b> Lipseste atributul name.
+    Fara acesta, valoarea campului nu este inclusa
+    in datele trimise de formular.</p>
+
+    <p><b>Defectul 3:</b> Tabelul are un rand cu doar
+    doua celule, desi are trei coloane.
+    Tabelul nu este complet si poate fi afisat incorect.</p>
+
+    <h2> Formular corectat</h2>
+
+    <form>
+        <label for="email2">Email:</label>
+        <input type="email"
+               id="email2"
+               name="email"
+               required>
+
+        <input type="submit" value="Trimite">
+    </form>
+
+
+    <h2>Tabel - Produse</h2>
+
+    <table border="1">
+        <tr>
+            <th>Produs</th>
+            <th>Stoc</th>
+            <th>Pret</th>
+        </tr>
+        <tr>
+            <td>Pix</td>
+            <td>20</td>
+            <td>3 lei</td>
+        </tr>
+    </table>
+
+  
+
+</body>
+</html>
